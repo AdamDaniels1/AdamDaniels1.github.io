@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+	 <style>
+      body {
+        background-color: #ffc578;
+      }
+	  .centered-heading {
+    text-align: center;
+  }
+    </style>
+	
+
+  </head>
+  <body>
+    <header>
+      <h1 class="centered-heading">Welcome to Adam's Website</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+	<h2>Home</h2>
+	<p>I like to read and have read over 1200 books (so far). Much of my reading has been accomplished via speed-reading and in order to give you an idea of how long a book would take you to read given your reading speed I have created this simple calculator.</p>
+	<hr>    
+    <p>Enter the number of words in the book and your reading speed to calculate how long it will take you to read the book:</p>
+    <label for="words">Number of words:</label>
+    <input type="number" id="words" name="words" required>
+	<label for="pages">Number of pages:</label>
+    <input type="number" id="pages" name="pages" required>
+    <label for="speed">Reading speed (words per minute):</label>
+    <input type="number" id="speed" name="speed" required>
+    <button onclick="calculate()">Calculate</button>
+	<button onclick="clearForm()">Clear Form</button>
+    <p id="result"></p>
+    <script>
+      function calculate() {
+		var pages = document.getElementById("pages").value;
+        var words = document.getElementById("words").value;
+        var speed = document.getElementById("speed").value;
+		var wordsPerPage = 275; // average number of words per page in a novel
+        var words = pages * wordsPerPage;
+        var minutes = Math.ceil(words / speed);
+        var hours = Math.floor(minutes / 60);
+        minutes = minutes % 60;
+        var result = "It will take you <strong>" + hours + " hours and " + minutes + " minutes</strong> to read this book.";
+        document.getElementById("result").innerHTML = result;
+      }
+	  
+	  function clearForm() {
+		document.getElementById("pages").value = "";
+        document.getElementById("words").value = "";
+        document.getElementById("speed").value = "";
+        document.getElementById("result").innerHTML = "";
+      }
+    </script>
+  
+	
+      <h2>About Me</h2>
+      <p>My name is Adam Daniels and I'm a going to work in the tech industry someday. I love learning new things and for technology I am currently learning Python, basic web development and I am in the process of getting my A+ certificate.</p>
+    </main>
+    <footer>
+      <p class="centered-heading">&copy; 2023 Adam's Website</p>
+    </footer>
+  </body>
+</html>
