@@ -11,6 +11,25 @@
 	  .centered-heading {
     text-align: center;
   }
+  nav {
+  text-align: center;
+}
+
+ul {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+}
     </style>
 	
 
@@ -28,9 +47,11 @@
     </header>
     <main>
 	<h2>Home</h2>
-	<p>I like to read and have read over 1200 books (so far). Much of my reading has been accomplished via speed-reading and in order to give you an idea of how long a book would take you to read given your reading speed I have created this simple calculator.</p>
-	<hr>    
+	<p>I like to read and have read over <a href="https://www.goodreads.com/review/list/1449899?ref=nav_mybooks">1200</a> books (so far). Much of my reading has been accomplished via speed-reading and in order to give you an idea of how long a book would take you to read given your reading speed I have created this simple calculator.</p>
+	<hr>
+    
     <p>Enter the number of words in the book and your reading speed to calculate how long it will take you to read the book:</p>
+	<p>Don't know your reading speed? Go <a href="https://swiftread.com/reading-speed-test">here</a> and take the free test to get a good idea.</p>
     
 	<label for="pages">Number of pages:</label>
     <input type="number" id="pages" name="pages" required>
@@ -38,7 +59,9 @@
     <input type="number" id="speed" name="speed" required>
     <button onclick="calculate()">Calculate</button>
 	<button onclick="clearForm()">Clear Form</button>
-    <p id="result"></p>
+	<p id="result"></p>
+   
+	
     <script>
       function calculate() {
 		var pages = document.getElementById("pages").value;
@@ -60,9 +83,11 @@
         document.getElementById("result").innerHTML = "";
       }
     </script>
+  <hr>
+  <p>I read about 660 words per minute but in order to have the best comprehension I slow myself down considerably in order to understand more difficult texts.</p>
+    <p>At 300 pages average per book, across 1200 books, that's roughly 360000 pages. If I plug my information into my calculator it took me roughly 2500 hours to read all of my books. That's 104 24 hour days! I am now winding down the amount of reading I do so I can concentrate on building things and working with technology. Books are great, but be careful to not become consumed by them.</p>
+	      <h2>About Me</h2>
   
-	
-      <h2>About Me</h2>
       <p>My name is Adam Daniels and I'm a going to work in the tech industry someday. I love learning new things and for technology I am currently learning Python, basic web development and I am in the process of getting my A+ certificate.</p>
     </main>
     <footer>
